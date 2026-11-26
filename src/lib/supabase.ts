@@ -31,7 +31,8 @@ export async function initSupabaseClient(): Promise<{
 
   try {
     const res = await fetch('/api/public-config');
-    if (res.ok) {
+    const contentType = res.headers.get('content-type') || '';
+    if (res.ok && contentType.includes('application/json')) {
       const data = await res.json();
       if (!url && data.supabaseUrl) url = data.supabaseUrl;
       if (!anonKey && data.supabaseAnonKey) anonKey = data.supabaseAnonKey;

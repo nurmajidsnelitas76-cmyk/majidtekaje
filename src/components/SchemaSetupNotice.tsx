@@ -91,11 +91,14 @@ export function SchemaSetupNotice({
               :
             </p>
             <ul className="font-mono text-xs bg-white border border-red-200 rounded-md p-3 space-y-1 text-slate-800">
-              <li>VITE_SUPABASE_URL</li>
-              <li>VITE_SUPABASE_ANON_KEY</li>
-              <li>SUPABASE_URL</li>
+              <li>SUPABASE_URL (atau VITE_SUPABASE_URL)</li>
+              <li>SUPABASE_ANON_KEY (atau VITE_SUPABASE_ANON_KEY)</li>
               <li>SUPABASE_SERVICE_ROLE_KEY</li>
             </ul>
+            <p className="text-xs text-red-700">
+              Jika menggunakan Vercel, pastikan environment variables diaktifkan dan lakukan{' '}
+              <strong>Redeploy</strong> agar perubahan terbaca.
+            </p>
           </div>
         </div>
       </div>
